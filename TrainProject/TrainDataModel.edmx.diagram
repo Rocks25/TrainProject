@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4708ff50d2f34642955d7c1c501cd85b" Name="Diagram1" ZoomLevel="39" >
+        <EntityTypeShape EntityType="TrainDataModel.Train" Width="1.5" PointX="6.5" PointY="1.75" />
+        <EntityTypeShape EntityType="TrainDataModel.Schedule" Width="1.5" PointX="6.25" PointY="4.625" />
+        <AssociationConnector Association="TrainDataModel.TrainSchedule" />
+        <EntityTypeShape EntityType="TrainDataModel.StopsAsc" Width="1.5" PointX="3.5" PointY="4.375" />
+        <AssociationConnector Association="TrainDataModel.ScheduleStopsAsc" />
+        <EntityTypeShape EntityType="TrainDataModel.BookingType" Width="1.5" PointX="13" PointY="2.25" />
+        <EntityTypeShape EntityType="TrainDataModel.ReservableSpace" Width="1.5" PointX="10.875" PointY="4.75" />
+        <AssociationConnector Association="TrainDataModel.BookingTypeReservableSpace" />
+        <AssociationConnector Association="TrainDataModel.TrainReservableSpace"></AssociationConnector>
+        <EntityTypeShape EntityType="TrainDataModel.Station" Width="1.5" PointX="3.5" PointY="7.125" />
+        <AssociationConnector Association="TrainDataModel.StationStopsAsc" />
+        <EntityTypeShape EntityType="TrainDataModel.Segment" Width="1.5" PointX="0.875" PointY="7.625" />
+        <AssociationConnector Association="TrainDataModel.SegmentStationA" />
+        <AssociationConnector Association="TrainDataModel.SegmentStationB" ManuallyRouted="true" >
+          <ConnectorPoint PointX="2.375" PointY="8.1056149291992181" />
+          <ConnectorPoint PointX="3.5" PointY="8.1056149291992181" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TrainDataModel.Ticket" Width="1.5" PointX="6.5" PointY="10.375" />
+        <EntityTypeShape EntityType="TrainDataModel.Customer" Width="1.5" PointX="3.625" PointY="10.25" />
+        <AssociationConnector Association="TrainDataModel.StationTicketA" />
+        <AssociationConnector Association="TrainDataModel.StationTicketB" />
+        <AssociationConnector Association="TrainDataModel.ScheduleTicket" />
+        <AssociationConnector Association="TrainDataModel.CustomerTicket" />
+        <EntityTypeShape EntityType="TrainDataModel.TicketedSpaceInt" Width="1.5" PointX="10.125" PointY="11.25" />
+        <AssociationConnector Association="TrainDataModel.TicketTicketedSpaceInt" />
+        <AssociationConnector Association="TrainDataModel.ReservableSpaceTicketedSpaceInt" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
