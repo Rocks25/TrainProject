@@ -1,0 +1,104 @@
+﻿<Window x:Class="TrainProject.Views.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindowView" Height="1280" Width="720">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0" Margin="1" Background="Aquamarine" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Column="0" Grid.Row="0" >
+                    <Label
+                        Width="50"
+	                    Content="Origin"
+	                    HorizontalAlignment="Center"
+	                    Margin="10,10,10,10"
+	                    VerticalAlignment="Center"
+	                    Background="Beige"
+	                    Padding="5"
+	                    FontSize="10"
+	                    Loaded="Label_Loaded">               
+                    </Label>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <TextBox HorizontalAlignment="Left"
+		                 Height="23"
+		                 Margin="10,10,0,0"
+		                 TextWrapping="Wrap"
+		                 Text=""
+		                 VerticalAlignment="Top"
+		                 Width="120"
+		                 TextChanged="TextBox_TextChanged"
+                         Name="OriginInput"/>
+                </Grid>
+                <Grid Grid.Column="0" Grid.Row="1" >
+                    <Label
+                        Width="auto"
+	                    Content="Destination"
+	                    HorizontalAlignment="Center"
+	                    Margin="10,10,10,10"
+	                    VerticalAlignment="Center"
+	                    Background="Beige"
+	                    Padding="5"
+	                    FontSize="10"
+	                    Loaded="Label_Loaded">
+                    </Label>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <TextBox HorizontalAlignment="Left"
+		                 Height="23"
+		                 Margin="10,10,0,0"
+		                 TextWrapping="Wrap"
+		                 Text=""
+		                 VerticalAlignment="Top"
+		                 Width="120"
+		                 TextChanged="TextBox_TextChanged"
+                         Name="DestinationInput"/>
+                </Grid>
+                <Grid Grid.Column ="0" Grid.Row="2">
+                    <Button
+                        Height="30"
+                        Width="70"
+                          Margin="10,10,0,0"
+                        Name="SubmitButton"
+                        Content="Submit"/>
+                </Grid>
+                <Grid Grid.Column ="0" Grid.Row="3">
+                    <Button
+                        Height="30"
+                        Width="70"
+                        Margin="10,10,0,0"
+                        Name="BookButton"
+                        Content="Book Trip"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <!--ListBox-->
+        <Grid Grid.Column="1" Background="BlueViolet">
+            <!--DataBind data from observable collection to populate list box.-->
+            <ListBox 
+                Name="ScheduleOptions"
+                />
+            
+            
+        </Grid>
+            
+              
+        
+    </Grid>
+</Window>
