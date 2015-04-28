@@ -17,6 +17,6 @@ namespace TrainProject
         public int Id { get; set; }
     
         public virtual Ticket Ticket { get; set; }
-        public virtual ReservableSpace CompartmentSeatNumber { get; set; }
+        public virtual ReservableSpace ReservableSpace { get; set; }
     }
 }

@@ -14,7 +14,14 @@ namespace TrainProject
     
     public partial class BookingType
     {
+        public BookingType()
+        {
+            this.ReservableSpaces = new HashSet<ReservableSpace>();
+        }
+    
         public int TypeID { get; set; }
         public string BookingDescription { get; set; }
+    
+        public virtual ICollection<ReservableSpace> ReservableSpaces { get; set; }
     }
 }
