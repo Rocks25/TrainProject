@@ -107,6 +107,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TrainDataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="TrainUtils.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
