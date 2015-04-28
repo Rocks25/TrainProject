@@ -1,30 +1,27 @@
 ﻿<Window x:Class="TrainProject.Views.SeatOptions"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SeatOptions" Height="1280" Width="720">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-    </Grid>
-    <Grid Grid.Column="0" Grid.Row="0" >
-        <Label
-            Width="50"
-	        Content="Seat"
-	        HorizontalAlignment="Center"
-	        Margin="10,10,10,10"
-	        VerticalAlignment="Center"
-	        Background="Chartreuse"
-	        Padding="5"
-	        FontSize="10"
-	        Loaded="Label_Loaded">
-       </Label>
-    </Grid>
-
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="SeatOptions" Height="1280" Width="720">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Label
+			Width="50"
+			Content="Seat"
+			HorizontalAlignment="Center"
+			Margin="10,10,10,10"
+			VerticalAlignment="Center"
+			Background="Chartreuse"
+			Padding="5"
+			FontSize="10"
+			Loaded="Label_Loaded">
+		</Label>
+	</Grid>
 </Window>
-    
+	
