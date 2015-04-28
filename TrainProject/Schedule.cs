@@ -22,7 +22,7 @@ namespace TrainProject
     
         public int TrainRouteID { get; set; }
     
-        public virtual Train TrainID { get; set; }
+        public virtual Train Train { get; set; }
         public virtual ICollection<StopsAsc> StopsAscs { get; set; }
         public virtual ICollection<Ticket> Tickets { get; set; }
     }

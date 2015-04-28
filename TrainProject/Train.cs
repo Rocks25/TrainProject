@@ -14,8 +14,17 @@ namespace TrainProject
     
     public partial class Train
     {
+        public Train()
+        {
+            this.Schedules = new HashSet<Schedule>();
+            this.ReservableSpaces = new HashSet<ReservableSpace>();
+        }
+    
         public int TrainID { get; set; }
         public string Name { get; set; }
         public string Capacity { get; set; }
+    
+        public virtual ICollection<Schedule> Schedules { get; set; }
+        public virtual ICollection<ReservableSpace> ReservableSpaces { get; set; }
     }
 }

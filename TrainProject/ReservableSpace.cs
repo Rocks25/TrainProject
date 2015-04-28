@@ -14,9 +14,15 @@ namespace TrainProject
     
     public partial class ReservableSpace
     {
+        public ReservableSpace()
+        {
+            this.TicketedSpaceInts = new HashSet<TicketedSpaceInt>();
+        }
+    
         public int CompartmentSeatNumber { get; set; }
     
-        public virtual BookingType TypeID { get; set; }
-        public virtual Train TrainID { get; set; }
+        public virtual BookingType BookingType { get; set; }
+        public virtual Train Train { get; set; }
+        public virtual ICollection<TicketedSpaceInt> TicketedSpaceInts { get; set; }
     }
 }
