@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -60,6 +62,55 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BookingType.cs">
+      <DependentUpon>TrainDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>TrainDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReservableSpace.cs">
+      <DependentUpon>TrainDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule.cs">
+      <DependentUpon>TrainDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Segment.cs">
+      <DependentUpon>TrainDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Station.cs">
+      <DependentUpon>TrainDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StopsAsc.cs">
+      <DependentUpon>TrainDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.cs">
+      <DependentUpon>TrainDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketedSpaceInt.cs">
+      <DependentUpon>TrainDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Train.cs">
+      <DependentUpon>TrainDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrainDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrainDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrainDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrainDataModel.edmx</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -96,9 +147,32 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <EntityDeploy Include="TrainDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TrainDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TrainDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TrainDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>TrainDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="TrainDataModel.edmx.diagram">
+      <DependentUpon>TrainDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="TrainDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TrainDataModel.cs</LastGenOutput>
+      <DependentUpon>TrainDataModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TrainDataModel.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\MainWindowView.xaml">
