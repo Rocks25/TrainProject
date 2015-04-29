@@ -19,8 +19,7 @@
 			VerticalAlignment="Center"
 			Background="Chartreuse"
 			Padding="5"
-			FontSize="10"
-			Loaded="Label_Loaded">
+			FontSize="10">
 		</Label>
 	</Grid>
 </Window>

@@ -5,16 +5,17 @@ using System.Data.Entity;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TrainProject
 {
-	class TrainUtils
+	abstract class TrainUtils
 	{
-		private TrainDataModelContainer db = new TrainDataModelContainer();
+		static private TrainDataModelContainer db = new TrainDataModelContainer();
 
-		IEnumerable<Station> ShortestRoute(Station originStation, Station destinationStation, Train t)
+		public static IEnumerable<Station> ShortestRoute(Station originStation, Station destinationStation, Train t)
 		{
 			IEnumerable<Station> stations = from station in db.Stations
 											select station;
@@ -64,5 +65,23 @@ namespace TrainProject
 
 			return null;
 		}
+
+		public static IEnumerable<Station> GetOrigins()
+		{
+			IEnumerable<Station> originsStations = from station in db.Stations
+												   select station;
+			return originsStations;
+		}
+
+		public static IEnumerable<Station> GetDestinations(int originId)
+		{
+			IEnumerable<Station> destinationStations = from destination in db.Stations
+													   where destination.StationID != originId
+													   select destination;
+			return destinationStations;
+		}
+
+
+
 	}
 }
