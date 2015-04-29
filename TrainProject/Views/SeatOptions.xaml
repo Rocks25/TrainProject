@@ -3,18 +3,18 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		Title="SeatOptions" Height="1280" Width="720">
 	<Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="250" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
 
 		<Grid.RowDefinitions>
 			<RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
-        <Label
+		<Label
 			Width="89"
 			Content="Departing Station"
 			HorizontalAlignment="Center"
@@ -24,8 +24,8 @@
 			Padding="5"
 			FontSize="10"
 			Loaded="Label_Loaded">
-        </Label>
-        <Label
+		</Label>
+		<Label
 			Width="122"
 			Content=""
 			HorizontalAlignment="Center"
@@ -35,10 +35,10 @@
 			Padding="5"
 			FontSize="10"
 			Loaded="Label_Loaded">
-        </Label>
-        <Label 
-            Grid.Column="0" Grid.Row="1"
-            Width="89"
+		</Label>
+		<Label 
+			Grid.Column="0" Grid.Row="1"
+			Width="89"
 			Content="Arriving Station"
 			HorizontalAlignment="Center"
 			Margin="10,10,151,8"
@@ -47,9 +47,9 @@
 			Padding="5"
 			FontSize="10"
 			Loaded="Label_Loaded">
-        </Label>
+		</Label>
 		<Label
-            Grid.Column="0" Grid.Row="1"
+			Grid.Column="0" Grid.Row="1"
 			Width="122"
 			Content=""
 			HorizontalAlignment="Center"
@@ -59,26 +59,26 @@
 			Padding="5"
 			FontSize="10">
 		</Label>
-        <TextBox
-             Grid.Column="0" Grid.Row="2"
-             HorizontalAlignment="Left"
-		     Height="34"
-		     Margin="30,10,30,0"
-		     TextWrapping="Wrap"
-		     Text="Select your preferred seat for this ticket."
-		     VerticalAlignment="Top"
-		     TextChanged="TextBox_TextChanged"/>
+		<TextBox
+			 Grid.Column="0" Grid.Row="2"
+			 HorizontalAlignment="Left"
+			 Height="34"
+			 Margin="30,10,30,0"
+			 TextWrapping="Wrap"
+			 Text="Select your preferred seat for this ticket."
+			 VerticalAlignment="Top"
+			 TextChanged="TextBox_TextChanged"/>
 
-        <Button 
-            Grid.Column ="0" Grid.Row="3"
-            Height="30"
+		<Button 
+			Grid.Column ="0" Grid.Row="3"
+			Height="30"
 			Width="70"
-            HorizontalAlignment="Left"
+			HorizontalAlignment="Left"
 			Margin="10,10,0,0"
 			Name="BookButton"
 			Content="Book Trip"
-            VerticalAlignment="Top"/>
-    
+			VerticalAlignment="Top"/>
+	
 	</Grid>
 </Window>
 	
