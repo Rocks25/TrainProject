@@ -1,13 +1,15 @@
 ﻿<Window x:Class="TrainProject.Views.MainWindowView"
 		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d"
 		Title="MainWindowView" Height="1280" Width="720">
 	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="250" />
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
-		
+
 		<Grid Grid.Column="0" Margin="1" Background="Aquamarine" >
 			<Grid>
 				<Grid.RowDefinitions>
@@ -21,7 +23,7 @@
 					<ColumnDefinition Width="auto"/>
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
-				
+
 				<Grid Grid.Column="0" Grid.Row="0" >
 					<Label
 						Width="50"
@@ -31,20 +33,25 @@
 						VerticalAlignment="Center"
 						Background="Coral"
 						Padding="5"
-						FontSize="10"
-						Loaded="Label_Loaded">               
+						FontSize="10">
 					</Label>
 				</Grid>
 				<Grid Grid.Column="1" Grid.Row="0">
-					<TextBox HorizontalAlignment="Left"
-						 Height="23"
-						 Margin="10,10,0,0"
-						 TextWrapping="Wrap"
-						 Text=""
-						 VerticalAlignment="Top"
-						 Width="120"
-						 TextChanged="TextBox_TextChanged"
-						 Name="OriginInput"/>
+					<ComboBox Height="Auto"
+							  HorizontalAlignment="Left"
+							  Margin="10,10,0,0"
+							  Text=""
+							  VerticalAlignment="Top"
+							  Width="120"
+							  Name="OriginInput"
+							  ItemsSource="{Binding OriginStations}">
+						<ComboBox.ItemTemplate>
+							<DataTemplate>
+								<Label Content="{Binding StationName}"/>
+							</DataTemplate>
+						</ComboBox.ItemTemplate>
+
+					</ComboBox>
 				</Grid>
 				<Grid Grid.Column="0" Grid.Row="1" >
 					<Label
@@ -55,20 +62,30 @@
 						VerticalAlignment="Center"
 						Background="Coral"
 						Padding="5"
-						FontSize="10"
-						Loaded="Label_Loaded">
+						FontSize="10">
 					</Label>
 				</Grid>
 				<Grid Grid.Column="1" Grid.Row="1">
-					<TextBox HorizontalAlignment="Left"
-						 Height="23"
-						 Margin="10,10,0,0"
-						 TextWrapping="Wrap"
-						 Text=""
-						 VerticalAlignment="Top"
-						 Width="120"
-						 TextChanged="TextBox_TextChanged"
-						 Name="DestinationInput"/>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="51*"/>
+						<ColumnDefinition Width="116*"/>
+					</Grid.ColumnDefinitions>
+					<ComboBox HorizontalAlignment="Left"
+							  Height="Auto"
+							  Margin="10,10,0,0"
+							  Text=""
+							  VerticalAlignment="Top"
+							  Width="120"
+							  Name="DestinationInput" 
+							  Grid.ColumnSpan="2"
+							  ItemsSource="{Binding DestinationStations}">
+						<ComboBox.ItemTemplate>
+							<DataTemplate>
+								<Label Content="{Binding StationName}"/>
+							</DataTemplate>
+						</ComboBox.ItemTemplate>
+						</ComboBox>
+					
 				</Grid>
 				<Grid Grid.Column ="0" Grid.Row="2">
 					<Button
@@ -94,11 +111,11 @@
 			<ListBox 
 				Name="ScheduleOptions"
 				/>
-			
-			
+
+
 		</Grid>
-			
-			  
-		
+
+
+
 	</Grid>
 </Window>

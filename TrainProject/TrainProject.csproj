@@ -68,6 +68,7 @@
     <Compile Include="Customer.cs">
       <DependentUpon>TrainDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ReservableSpace.cs">
       <DependentUpon>TrainDataModel.tt</DependentUpon>
     </Compile>
@@ -112,6 +113,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\MainWindowModel.cs" />
+    <Compile Include="TrainUtils.cs" />
     <Compile Include="Views\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
