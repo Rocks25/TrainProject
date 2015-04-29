@@ -31,7 +31,7 @@
 						HorizontalAlignment="Center"
 						Margin="10,10,10,10"
 						VerticalAlignment="Center"
-						Background="Beige"
+						Background="Coral"
 						Padding="5"
 						FontSize="10">
 					</Label>
@@ -60,7 +60,7 @@
 						HorizontalAlignment="Center"
 						Margin="10,10,10,10"
 						VerticalAlignment="Center"
-						Background="Beige"
+						Background="Coral"
 						Padding="5"
 						FontSize="10">
 					</Label>
