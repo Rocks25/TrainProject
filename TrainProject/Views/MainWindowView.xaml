@@ -10,7 +10,7 @@
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
 
-		<Grid Grid.Column="0" Margin="1" Background="Aquamarine" >
+		<Grid Grid.Column="0" Margin="1" Background="CornflowerBlue" >
 			<Grid>
 				<Grid.RowDefinitions>
 					<RowDefinition Height="auto"/>
@@ -31,7 +31,7 @@
 						HorizontalAlignment="Center"
 						Margin="10,10,10,10"
 						VerticalAlignment="Center"
-						Background="Coral"
+						Background="Lavender"
 						Padding="5"
 						FontSize="10">
 					</Label>
@@ -60,7 +60,7 @@
 						HorizontalAlignment="Center"
 						Margin="10,10,10,10"
 						VerticalAlignment="Center"
-						Background="Coral"
+						Background="Lavender"
 						Padding="5"
 						FontSize="10">
 					</Label>
