@@ -116,6 +116,9 @@
     </Compile>
     <Compile Include="Model\MainWindowModel.cs" />
     <Compile Include="TrainUtils.cs" />
+    <Compile Include="Views\ConfirmationView.xaml.cs">
+      <DependentUpon>ConfirmationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CustomerInfoView.xaml.cs">
       <DependentUpon>CustomerInfoView.xaml</DependentUpon>
     </Compile>
@@ -178,6 +181,10 @@
     <Content Include="TrainDataModel.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\ConfirmationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CustomerInfoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
