@@ -44,6 +44,7 @@
 							  VerticalAlignment="Top"
 							  Width="120"
 							  Name="OriginInput"
+							  SelectionChanged="OriginInput_OnSelectionChanged"
 							  ItemsSource="{Binding OriginStations}">
 						<ComboBox.ItemTemplate>
 							<DataTemplate>

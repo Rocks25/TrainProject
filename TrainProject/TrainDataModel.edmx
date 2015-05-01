@@ -483,6 +483,7 @@
           <NavigationProperty Name="TrainRouteID" Relationship="TrainDataModel.ScheduleTicket" FromRole="Ticket" ToRole="Schedule" />
           <NavigationProperty Name="CustomerID" Relationship="TrainDataModel.CustomerTicket" FromRole="Ticket" ToRole="Customer" />
           <NavigationProperty Name="TicketedSpaceInts" Relationship="TrainDataModel.TicketTicketedSpaceInt" FromRole="Ticket" ToRole="TicketedSpaceInt" />
+          <Property Name="Date" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
