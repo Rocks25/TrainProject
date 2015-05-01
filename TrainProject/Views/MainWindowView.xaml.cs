@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
@@ -29,7 +30,7 @@ namespace TrainProject.Views
 
 		private void OriginInput_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			
+			DestinationInput.ItemsSource = ((MainWindowModel) DataContext).DestinationStations;
 		}
 	}
 }

@@ -20,7 +20,7 @@
         <AssociationConnector Association="TrainDataModel.SegmentStationA" />
         <AssociationConnector Association="TrainDataModel.SegmentStationB" ManuallyRouted="false" >
         </AssociationConnector>
-        <EntityTypeShape EntityType="TrainDataModel.Ticket" Width="1.5" PointX="6.5" PointY="10.375" />
+        <EntityTypeShape EntityType="TrainDataModel.Ticket" Width="1.5" PointX="6.5" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TrainDataModel.Customer" Width="1.5" PointX="3.625" PointY="10.25" />
         <AssociationConnector Association="TrainDataModel.StationTicketA" />
         <AssociationConnector Association="TrainDataModel.StationTicketB" />

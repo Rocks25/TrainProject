@@ -14,7 +14,7 @@
 			<RowDefinition Height="auto"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
-        <Label
+		<Label
 			Width="89"
 			Content="Departing Station"
 			HorizontalAlignment="Center"
@@ -23,8 +23,8 @@
 			Background="Lavender"
 			Padding="5"
 			FontSize="10">
-        </Label>
-        <Label
+		</Label>
+		<Label
 			Width="122"
 			Content=""
 			HorizontalAlignment="Center"
@@ -34,8 +34,8 @@
 			Padding="5"
 			FontSize="10"
 			>
-        </Label>
-        <Label 
+		</Label>
+		<Label 
 			Grid.Column="0" Grid.Row="1"
 			Width="89"
 			Content="Arriving Station"
@@ -45,7 +45,7 @@
 			Background="Lavender"
 			Padding="5"
 			FontSize="10">
-        </Label>
+		</Label>
 		<Label
 			Grid.Column="0" Grid.Row="1"
 			Width="122"
@@ -57,7 +57,7 @@
 			Padding="5"
 			FontSize="10">
 		</Label>
-        <TextBox
+		<TextBox
 			 Grid.Column="0" Grid.Row="2"
 			 HorizontalAlignment="Left"
 			 Height="34"
@@ -66,7 +66,7 @@
 			 Text="Select your preferred seat for this ticket."
 			 VerticalAlignment="Top"/>
 
-        <Button 
+		<Button 
 			Grid.Column ="0" Grid.Row="3"
 			Height="30"
 			Width="70"
