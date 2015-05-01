@@ -4,159 +4,160 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="TrainDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
+    <Schema Namespace="TrainDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="TrainDataModelStoreContainer">
-    <EntitySet Name="Trains" EntityType="TrainDataModel.Store.Trains" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Schedules" EntityType="TrainDataModel.Store.Schedules" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="StopsAscs" EntityType="TrainDataModel.Store.StopsAscs" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="BookingTypes" EntityType="TrainDataModel.Store.BookingTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ReservableSpaces" EntityType="TrainDataModel.Store.ReservableSpaces" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Stations" EntityType="TrainDataModel.Store.Stations" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Segments" EntityType="TrainDataModel.Store.Segments" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Tickets" EntityType="TrainDataModel.Store.Tickets" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Customers" EntityType="TrainDataModel.Store.Customers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TicketedSpaceInts" EntityType="TrainDataModel.Store.TicketedSpaceInts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trains" EntityType="TrainDataModel.Store.Trains" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Schedules" EntityType="TrainDataModel.Store.Schedules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StopsAscs" EntityType="TrainDataModel.Store.StopsAscs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BookingTypes" EntityType="TrainDataModel.Store.BookingTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReservableSpaces" EntityType="TrainDataModel.Store.ReservableSpaces" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stations" EntityType="TrainDataModel.Store.Stations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Segments" EntityType="TrainDataModel.Store.Segments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tickets" EntityType="TrainDataModel.Store.Tickets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customers" EntityType="TrainDataModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TicketedSpaceInts" EntityType="TrainDataModel.Store.TicketedSpaceInts" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="TrainSchedule" Association="TrainDataModel.Store.TrainSchedule">
-      <End EntitySet="Trains" Role="Train" />
-      <End EntitySet="Schedules" Role="Schedule" />
+      <End Role="Train" EntitySet="Trains" />
+      <End Role="Schedule" EntitySet="Schedules" />
     </AssociationSet>
     <AssociationSet Name="ScheduleStopsAsc" Association="TrainDataModel.Store.ScheduleStopsAsc">
-      <End EntitySet="Schedules" Role="Schedule" />
-      <End EntitySet="StopsAscs" Role="StopsAsc" />
+      <End Role="Schedule" EntitySet="Schedules" />
+      <End Role="StopsAsc" EntitySet="StopsAscs" />
     </AssociationSet>
     <AssociationSet Name="BookingTypeReservableSpace" Association="TrainDataModel.Store.BookingTypeReservableSpace">
-      <End EntitySet="BookingTypes" Role="BookingType" />
-      <End EntitySet="ReservableSpaces" Role="ReservableSpace" />
+      <End Role="BookingType" EntitySet="BookingTypes" />
+      <End Role="ReservableSpace" EntitySet="ReservableSpaces" />
     </AssociationSet>
     <AssociationSet Name="TrainReservableSpace" Association="TrainDataModel.Store.TrainReservableSpace">
-      <End EntitySet="Trains" Role="Train" />
-      <End EntitySet="ReservableSpaces" Role="ReservableSpace" />
+      <End Role="Train" EntitySet="Trains" />
+      <End Role="ReservableSpace" EntitySet="ReservableSpaces" />
     </AssociationSet>
     <AssociationSet Name="StationStopsAsc" Association="TrainDataModel.Store.StationStopsAsc">
-      <End EntitySet="Stations" Role="Station" />
-      <End EntitySet="StopsAscs" Role="StopsAsc" />
+      <End Role="Station" EntitySet="Stations" />
+      <End Role="StopsAsc" EntitySet="StopsAscs" />
     </AssociationSet>
     <AssociationSet Name="SegmentStationA" Association="TrainDataModel.Store.SegmentStationA">
-      <End EntitySet="Segments" Role="Segment" />
-      <End EntitySet="Stations" Role="Station" />
+      <End Role="Segment" EntitySet="Segments" />
+      <End Role="Station" EntitySet="Stations" />
     </AssociationSet>
     <AssociationSet Name="SegmentStationB" Association="TrainDataModel.Store.SegmentStationB">
-      <End EntitySet="Segments" Role="Segment" />
-      <End EntitySet="Stations" Role="Station" />
+      <End Role="Segment" EntitySet="Segments" />
+      <End Role="Station" EntitySet="Stations" />
     </AssociationSet>
     <AssociationSet Name="StationTicketA" Association="TrainDataModel.Store.StationTicketA">
-      <End EntitySet="Stations" Role="Station" />
-      <End EntitySet="Tickets" Role="Ticket" />
+      <End Role="Station" EntitySet="Stations" />
+      <End Role="Ticket" EntitySet="Tickets" />
     </AssociationSet>
     <AssociationSet Name="StationTicketB" Association="TrainDataModel.Store.StationTicketB">
-      <End EntitySet="Stations" Role="Station" />
-      <End EntitySet="Tickets" Role="Ticket" />
+      <End Role="Station" EntitySet="Stations" />
+      <End Role="Ticket" EntitySet="Tickets" />
     </AssociationSet>
     <AssociationSet Name="ScheduleTicket" Association="TrainDataModel.Store.ScheduleTicket">
-      <End EntitySet="Schedules" Role="Schedule" />
-      <End EntitySet="Tickets" Role="Ticket" />
+      <End Role="Schedule" EntitySet="Schedules" />
+      <End Role="Ticket" EntitySet="Tickets" />
     </AssociationSet>
     <AssociationSet Name="CustomerTicket" Association="TrainDataModel.Store.CustomerTicket">
-      <End EntitySet="Customers" Role="Customer" />
-      <End EntitySet="Tickets" Role="Ticket" />
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Ticket" EntitySet="Tickets" />
     </AssociationSet>
     <AssociationSet Name="TicketTicketedSpaceInt" Association="TrainDataModel.Store.TicketTicketedSpaceInt">
-      <End EntitySet="Tickets" Role="Ticket" />
-      <End EntitySet="TicketedSpaceInts" Role="TicketedSpaceInt" />
+      <End Role="Ticket" EntitySet="Tickets" />
+      <End Role="TicketedSpaceInt" EntitySet="TicketedSpaceInts" />
     </AssociationSet>
     <AssociationSet Name="ReservableSpaceTicketedSpaceInt" Association="TrainDataModel.Store.ReservableSpaceTicketedSpaceInt">
-      <End EntitySet="ReservableSpaces" Role="ReservableSpace" />
-      <End EntitySet="TicketedSpaceInts" Role="TicketedSpaceInt" />
+      <End Role="ReservableSpace" EntitySet="ReservableSpaces" />
+      <End Role="TicketedSpaceInt" EntitySet="TicketedSpaceInts" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Trains">
     <Key>
       <PropertyRef Name="TrainID" />
     </Key>
-    <Property Name="TrainID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-    <Property Name="Name" Nullable="false" Type="nvarchar(max)" />
-    <Property Name="Capacity" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="TrainID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Capacity" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Schedules">
     <Key>
       <PropertyRef Name="TrainRouteID" />
     </Key>
-    <Property Name="TrainRouteID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-    <Property Name="Train_TrainID" Nullable="false" Type="int" />
+    <Property Name="TrainRouteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Train_TrainID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="StopsAscs">
     <Key>
       <PropertyRef Name="StopID" />
     </Key>
-    <Property Name="StopID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-    <Property Name="ArrivalTime" Nullable="false" Type="nvarchar(max)" />
-    <Property Name="DepartureTime" Nullable="false" Type="nvarchar(max)" />
-    <Property Name="Schedule_TrainRouteID" Nullable="false" Type="int" />
-    <Property Name="Station_StationID" Nullable="false" Type="int" />
+    <Property Name="StopID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArrivalTime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DepartureTime" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Schedule_TrainRouteID" Type="int" Nullable="false" />
+    <Property Name="Station_StationID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="BookingTypes">
     <Key>
       <PropertyRef Name="TypeID" />
     </Key>
-    <Property Name="TypeID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-    <Property Name="BookingDescription" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookingDescription" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="ReservableSpaces">
     <Key>
       <PropertyRef Name="CompartmentSeatNumber" />
     </Key>
-    <Property Name="CompartmentSeatNumber" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-    <Property Name="BookingType_TypeID" Nullable="true" Type="int" />
-    <Property Name="Train_TrainID" Nullable="false" Type="int" />
+    <Property Name="CompartmentSeatNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookingType_TypeID" Type="int" Nullable="true" />
+    <Property Name="Train_TrainID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Stations">
     <Key>
       <PropertyRef Name="StationID" />
     </Key>
-    <Property Name="StationID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-    <Property Name="StationName" Nullable="false" Type="nvarchar(max)" />
-    <Property Name="City" Nullable="false" Type="nvarchar(max)" />
-    <Property Name="Address" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="StationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StationName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Segments">
     <Key>
       <PropertyRef Name="TrackSegmentID" />
     </Key>
-    <Property Name="TrackSegmentID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-    <Property Name="StationIDA_StationID" Nullable="false" Type="int" />
-    <Property Name="StationsIDB_StationID" Nullable="false" Type="int" />
+    <Property Name="TrackSegmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StationIDA_StationID" Type="int" Nullable="false" />
+    <Property Name="StationsIDB_StationID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Tickets">
     <Key>
       <PropertyRef Name="TicketNumber" />
     </Key>
-    <Property Name="TicketNumber" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-    <Property Name="Type" Nullable="false" Type="nvarchar(max)" />
-    <Property Name="StartStationID_StationID" Nullable="false" Type="int" />
-    <Property Name="EndStationID_StationID" Nullable="false" Type="int" />
-    <Property Name="TrainRouteID_TrainRouteID" Nullable="false" Type="int" />
-    <Property Name="CustomerID_CustomerID" Nullable="false" Type="int" />
+    <Property Name="TicketNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="StartStationID_StationID" Type="int" Nullable="false" />
+    <Property Name="EndStationID_StationID" Type="int" Nullable="false" />
+    <Property Name="TrainRouteID_TrainRouteID" Type="int" Nullable="false" />
+    <Property Name="CustomerID_CustomerID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Customers">
     <Key>
       <PropertyRef Name="CustomerID" />
     </Key>
-    <Property Name="CustomerID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-    <Property Name="FirstName" Nullable="false" Type="nvarchar(max)" />
-    <Property Name="LastName" Nullable="false" Type="nvarchar(max)" />
-    <Property Name="DOB" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DOB" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="TicketedSpaceInts">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
-    <Property Name="Ticket_TicketNumber" Nullable="false" Type="int" />
-    <Property Name="ReservableSpace_CompartmentSeatNumber" Nullable="false" Type="int" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ticket_TicketNumber" Type="int" Nullable="false" />
+    <Property Name="ReservableSpace_CompartmentSeatNumber" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="TrainSchedule">
-    <End Type="TrainDataModel.Store.Trains" Multiplicity="1" Role="Train" />
-    <End Type="TrainDataModel.Store.Schedules" Multiplicity="*" Role="Schedule" />
+    <End Role="Train" Type="TrainDataModel.Store.Trains" Multiplicity="1" />
+    <End Role="Schedule" Type="TrainDataModel.Store.Schedules" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Train">
         <PropertyRef Name="TrainID" />
@@ -167,8 +168,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="ScheduleStopsAsc">
-    <End Type="TrainDataModel.Store.Schedules" Multiplicity="1" Role="Schedule" />
-    <End Type="TrainDataModel.Store.StopsAscs" Multiplicity="*" Role="StopsAsc" />
+    <End Role="Schedule" Type="TrainDataModel.Store.Schedules" Multiplicity="1" />
+    <End Role="StopsAsc" Type="TrainDataModel.Store.StopsAscs" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Schedule">
         <PropertyRef Name="TrainRouteID" />
@@ -179,8 +180,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="BookingTypeReservableSpace">
-    <End Type="TrainDataModel.Store.BookingTypes" Multiplicity="0..1" Role="BookingType" />
-    <End Type="TrainDataModel.Store.ReservableSpaces" Multiplicity="*" Role="ReservableSpace" />
+    <End Role="BookingType" Type="TrainDataModel.Store.BookingTypes" Multiplicity="0..1" />
+    <End Role="ReservableSpace" Type="TrainDataModel.Store.ReservableSpaces" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="BookingType">
         <PropertyRef Name="TypeID" />
@@ -191,8 +192,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="TrainReservableSpace">
-    <End Type="TrainDataModel.Store.Trains" Multiplicity="1" Role="Train" />
-    <End Type="TrainDataModel.Store.ReservableSpaces" Multiplicity="*" Role="ReservableSpace" />
+    <End Role="Train" Type="TrainDataModel.Store.Trains" Multiplicity="1" />
+    <End Role="ReservableSpace" Type="TrainDataModel.Store.ReservableSpaces" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Train">
         <PropertyRef Name="TrainID" />
@@ -203,8 +204,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="StationStopsAsc">
-    <End Type="TrainDataModel.Store.Stations" Multiplicity="1" Role="Station" />
-    <End Type="TrainDataModel.Store.StopsAscs" Multiplicity="*" Role="StopsAsc" />
+    <End Role="Station" Type="TrainDataModel.Store.Stations" Multiplicity="1" />
+    <End Role="StopsAsc" Type="TrainDataModel.Store.StopsAscs" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Station">
         <PropertyRef Name="StationID" />
@@ -215,8 +216,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="SegmentStationA">
-    <End Type="TrainDataModel.Store.Segments" Multiplicity="*" Role="Segment" />
-    <End Type="TrainDataModel.Store.Stations" Multiplicity="1" Role="Station" />
+    <End Role="Segment" Type="TrainDataModel.Store.Segments" Multiplicity="*" />
+    <End Role="Station" Type="TrainDataModel.Store.Stations" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Station">
         <PropertyRef Name="StationID" />
@@ -227,8 +228,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="SegmentStationB">
-    <End Type="TrainDataModel.Store.Segments" Multiplicity="*" Role="Segment" />
-    <End Type="TrainDataModel.Store.Stations" Multiplicity="1" Role="Station" />
+    <End Role="Segment" Type="TrainDataModel.Store.Segments" Multiplicity="*" />
+    <End Role="Station" Type="TrainDataModel.Store.Stations" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Station">
         <PropertyRef Name="StationID" />
@@ -239,8 +240,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="StationTicketA">
-    <End Type="TrainDataModel.Store.Stations" Multiplicity="1" Role="Station" />
-    <End Type="TrainDataModel.Store.Tickets" Multiplicity="*" Role="Ticket" />
+    <End Role="Station" Type="TrainDataModel.Store.Stations" Multiplicity="1" />
+    <End Role="Ticket" Type="TrainDataModel.Store.Tickets" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Station">
         <PropertyRef Name="StationID" />
@@ -251,8 +252,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="StationTicketB">
-    <End Type="TrainDataModel.Store.Stations" Multiplicity="1" Role="Station" />
-    <End Type="TrainDataModel.Store.Tickets" Multiplicity="*" Role="Ticket" />
+    <End Role="Station" Type="TrainDataModel.Store.Stations" Multiplicity="1" />
+    <End Role="Ticket" Type="TrainDataModel.Store.Tickets" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Station">
         <PropertyRef Name="StationID" />
@@ -263,8 +264,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="ScheduleTicket">
-    <End Type="TrainDataModel.Store.Schedules" Multiplicity="1" Role="Schedule" />
-    <End Type="TrainDataModel.Store.Tickets" Multiplicity="*" Role="Ticket" />
+    <End Role="Schedule" Type="TrainDataModel.Store.Schedules" Multiplicity="1" />
+    <End Role="Ticket" Type="TrainDataModel.Store.Tickets" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Schedule">
         <PropertyRef Name="TrainRouteID" />
@@ -275,8 +276,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="CustomerTicket">
-    <End Type="TrainDataModel.Store.Customers" Multiplicity="1" Role="Customer" />
-    <End Type="TrainDataModel.Store.Tickets" Multiplicity="*" Role="Ticket" />
+    <End Role="Customer" Type="TrainDataModel.Store.Customers" Multiplicity="1" />
+    <End Role="Ticket" Type="TrainDataModel.Store.Tickets" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Customer">
         <PropertyRef Name="CustomerID" />
@@ -287,8 +288,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="TicketTicketedSpaceInt">
-    <End Type="TrainDataModel.Store.Tickets" Multiplicity="1" Role="Ticket" />
-    <End Type="TrainDataModel.Store.TicketedSpaceInts" Multiplicity="*" Role="TicketedSpaceInt" />
+    <End Role="Ticket" Type="TrainDataModel.Store.Tickets" Multiplicity="1" />
+    <End Role="TicketedSpaceInt" Type="TrainDataModel.Store.TicketedSpaceInts" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Ticket">
         <PropertyRef Name="TicketNumber" />
@@ -299,8 +300,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="ReservableSpaceTicketedSpaceInt">
-    <End Type="TrainDataModel.Store.ReservableSpaces" Multiplicity="1" Role="ReservableSpace" />
-    <End Type="TrainDataModel.Store.TicketedSpaceInts" Multiplicity="*" Role="TicketedSpaceInt" />
+    <End Role="ReservableSpace" Type="TrainDataModel.Store.ReservableSpaces" Multiplicity="1" />
+    <End Role="TicketedSpaceInt" Type="TrainDataModel.Store.TicketedSpaceInts" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="ReservableSpace">
         <PropertyRef Name="CompartmentSeatNumber" />
@@ -483,7 +484,7 @@
           <NavigationProperty Name="TrainRouteID" Relationship="TrainDataModel.ScheduleTicket" FromRole="Ticket" ToRole="Schedule" />
           <NavigationProperty Name="CustomerID" Relationship="TrainDataModel.CustomerTicket" FromRole="Ticket" ToRole="Customer" />
           <NavigationProperty Name="TicketedSpaceInts" Relationship="TrainDataModel.TicketTicketedSpaceInt" FromRole="Ticket" ToRole="TicketedSpaceInt" />
-          <Property Name="Date" Type="String" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -532,7 +533,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping CdmEntityContainer="TrainDataModelContainer" StorageEntityContainer="TrainDataModelStoreContainer">
+  <EntityContainerMapping StorageEntityContainer="TrainDataModelStoreContainer" CdmEntityContainer="TrainDataModelContainer">
     <EntitySetMapping Name="Trains">
       <EntityTypeMapping TypeName="IsTypeOf(TrainDataModel.Train)">
         <MappingFragment StoreEntitySet="Trains">
@@ -595,6 +596,7 @@
         <MappingFragment StoreEntitySet="Tickets">
           <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
           <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

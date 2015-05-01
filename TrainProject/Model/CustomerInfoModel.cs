@@ -33,7 +33,7 @@ namespace TrainProject.Model
             {
                 if (value != lastname)
                 {
-                    firstname = value;
+                    lastname = value;
                     OnPropertyChanged("LastNameInput");
                 }
             }

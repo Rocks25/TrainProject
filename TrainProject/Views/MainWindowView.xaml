@@ -45,6 +45,7 @@
 							  Width="120"
 							  Name="OriginInput"
 							  SelectionChanged="OriginInput_OnSelectionChanged"
+							  SelectedItem="{Binding SelectedOrigin}"
 							  ItemsSource="{Binding OriginStations}">
 						<ComboBox.ItemTemplate>
 							<DataTemplate>

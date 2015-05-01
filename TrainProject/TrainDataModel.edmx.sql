@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/26/2015 15:27:12
+-- Date Created: 05/01/2015 10:42:12
 -- Generated from EDMX file: C:\Users\Caleb\Google Drive\Southern\W15\Database\TrainProject\TrainProject\TrainDataModel.edmx
 -- --------------------------------------------------
 
@@ -107,7 +107,7 @@ GO
 -- Creating table 'Schedules'
 CREATE TABLE [dbo].[Schedules] (
     [TrainRouteID] int IDENTITY(1,1) NOT NULL,
-    [TrainID_TrainID] int  NOT NULL
+    [Train_TrainID] int  NOT NULL
 );
 GO
 
@@ -131,8 +131,8 @@ GO
 -- Creating table 'ReservableSpaces'
 CREATE TABLE [dbo].[ReservableSpaces] (
     [CompartmentSeatNumber] int IDENTITY(1,1) NOT NULL,
-    [TypeID_TypeID] int  NULL,
-    [TrainID_TrainID] int  NOT NULL
+    [BookingType_TypeID] int  NULL,
+    [Train_TrainID] int  NOT NULL
 );
 GO
 
@@ -157,6 +157,7 @@ GO
 CREATE TABLE [dbo].[Tickets] (
     [TicketNumber] int IDENTITY(1,1) NOT NULL,
     [Type] nvarchar(max)  NOT NULL,
+    [Date] datetime  NOT NULL,
     [StartStationID_StationID] int  NOT NULL,
     [EndStationID_StationID] int  NOT NULL,
     [TrainRouteID_TrainRouteID] int  NOT NULL,
@@ -177,7 +178,7 @@ GO
 CREATE TABLE [dbo].[TicketedSpaceInts] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Ticket_TicketNumber] int  NOT NULL,
-    [CompartmentSeatNumber_CompartmentSeatNumber] int  NOT NULL
+    [ReservableSpace_CompartmentSeatNumber] int  NOT NULL
 );
 GO
 
@@ -249,10 +250,10 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [TrainID_TrainID] in table 'Schedules'
+-- Creating foreign key on [Train_TrainID] in table 'Schedules'
 ALTER TABLE [dbo].[Schedules]
 ADD CONSTRAINT [FK_TrainSchedule]
-    FOREIGN KEY ([TrainID_TrainID])
+    FOREIGN KEY ([Train_TrainID])
     REFERENCES [dbo].[Trains]
         ([TrainID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -260,7 +261,7 @@ ADD CONSTRAINT [FK_TrainSchedule]
 -- Creating non-clustered index for FOREIGN KEY 'FK_TrainSchedule'
 CREATE INDEX [IX_FK_TrainSchedule]
 ON [dbo].[Schedules]
-    ([TrainID_TrainID]);
+    ([Train_TrainID]);
 GO
 
 -- Creating foreign key on [Schedule_TrainRouteID] in table 'StopsAscs'
@@ -277,10 +278,10 @@ ON [dbo].[StopsAscs]
     ([Schedule_TrainRouteID]);
 GO
 
--- Creating foreign key on [TypeID_TypeID] in table 'ReservableSpaces'
+-- Creating foreign key on [BookingType_TypeID] in table 'ReservableSpaces'
 ALTER TABLE [dbo].[ReservableSpaces]
 ADD CONSTRAINT [FK_BookingTypeReservableSpace]
-    FOREIGN KEY ([TypeID_TypeID])
+    FOREIGN KEY ([BookingType_TypeID])
     REFERENCES [dbo].[BookingTypes]
         ([TypeID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -288,13 +289,13 @@ ADD CONSTRAINT [FK_BookingTypeReservableSpace]
 -- Creating non-clustered index for FOREIGN KEY 'FK_BookingTypeReservableSpace'
 CREATE INDEX [IX_FK_BookingTypeReservableSpace]
 ON [dbo].[ReservableSpaces]
-    ([TypeID_TypeID]);
+    ([BookingType_TypeID]);
 GO
 
--- Creating foreign key on [TrainID_TrainID] in table 'ReservableSpaces'
+-- Creating foreign key on [Train_TrainID] in table 'ReservableSpaces'
 ALTER TABLE [dbo].[ReservableSpaces]
 ADD CONSTRAINT [FK_TrainReservableSpace]
-    FOREIGN KEY ([TrainID_TrainID])
+    FOREIGN KEY ([Train_TrainID])
     REFERENCES [dbo].[Trains]
         ([TrainID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -302,7 +303,7 @@ ADD CONSTRAINT [FK_TrainReservableSpace]
 -- Creating non-clustered index for FOREIGN KEY 'FK_TrainReservableSpace'
 CREATE INDEX [IX_FK_TrainReservableSpace]
 ON [dbo].[ReservableSpaces]
-    ([TrainID_TrainID]);
+    ([Train_TrainID]);
 GO
 
 -- Creating foreign key on [Station_StationID] in table 'StopsAscs'
@@ -417,10 +418,10 @@ ON [dbo].[TicketedSpaceInts]
     ([Ticket_TicketNumber]);
 GO
 
--- Creating foreign key on [CompartmentSeatNumber_CompartmentSeatNumber] in table 'TicketedSpaceInts'
+-- Creating foreign key on [ReservableSpace_CompartmentSeatNumber] in table 'TicketedSpaceInts'
 ALTER TABLE [dbo].[TicketedSpaceInts]
 ADD CONSTRAINT [FK_ReservableSpaceTicketedSpaceInt]
-    FOREIGN KEY ([CompartmentSeatNumber_CompartmentSeatNumber])
+    FOREIGN KEY ([ReservableSpace_CompartmentSeatNumber])
     REFERENCES [dbo].[ReservableSpaces]
         ([CompartmentSeatNumber])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -428,7 +429,7 @@ ADD CONSTRAINT [FK_ReservableSpaceTicketedSpaceInt]
 -- Creating non-clustered index for FOREIGN KEY 'FK_ReservableSpaceTicketedSpaceInt'
 CREATE INDEX [IX_FK_ReservableSpaceTicketedSpaceInt]
 ON [dbo].[TicketedSpaceInts]
-    ([CompartmentSeatNumber_CompartmentSeatNumber]);
+    ([ReservableSpace_CompartmentSeatNumber]);
 GO
 
 -- --------------------------------------------------

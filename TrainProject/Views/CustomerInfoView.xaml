@@ -38,7 +38,7 @@
                     <TextBox Height="Auto"
 						HorizontalAlignment="Left"
 						Margin="10,10,0,0"
-						Text=""
+						Text="{Binding FirstName}"
 						VerticalAlignment="Top"
 						Width="120"
 						Name="FirstNameInput">
@@ -60,7 +60,7 @@
                     <TextBox Height="Auto"
 							  HorizontalAlignment="Left"
 							  Margin="10,10,0,0"
-							  Text=""
+							  Text="{Binding LastName}"
 							  VerticalAlignment="Top"
 							  Width="120"
 							  Name="LastNameInput">
@@ -82,7 +82,7 @@
                     <TextBox Height="Auto"
 			              HorizontalAlignment="Left"
 			              Margin="10,10,0,0"
-			              Text=""
+			              Text="{Binding DOB}"
 			              VerticalAlignment="Top"
 			              Width="120"
 			              Name="DOBInput">
@@ -94,7 +94,8 @@
 						Width="70"
 						  Margin="10,10,0,0"
 						Name="SubmitButton"
-						Content="Submit"/>
+						Content="Submit"
+						Click="SubmitButton_OnClick"/>
                 </Grid>
 
             </Grid>
