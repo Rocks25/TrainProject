@@ -24,7 +24,7 @@
 			Padding="5"
 			FontSize="10">
         </Label>
-		<Label
+        <Label
 			Width="122"
 			Content=""
 			HorizontalAlignment="Center"
@@ -33,8 +33,8 @@
 			Background="LavenderBlush"
 			Padding="5"
 			FontSize="10"
-			Loaded="Label_Loaded">
-		</Label>
+			>
+        </Label>
         <Label 
 			Grid.Column="0" Grid.Row="1"
 			Width="89"

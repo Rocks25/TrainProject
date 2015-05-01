@@ -1,0 +1,108 @@
+﻿<Window x:Class="TrainProject.Views.CustomerInfoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CustomerInfoView" Height="720" Width="1280">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Margin="1" Background="CornflowerBlue" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Grid.Row="0" >
+                    <Label
+						Width="auto"
+						Content="First Name"
+						HorizontalAlignment="Center"
+						Margin="11,10,10,10"
+						VerticalAlignment="Center"
+						Background="Lavender"
+						Padding="5"
+						FontSize="10">
+                    </Label>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="0">
+                    <TextBox Height="Auto"
+						HorizontalAlignment="Left"
+						Margin="10,10,0,0"
+						Text=""
+						VerticalAlignment="Top"
+						Width="120"
+						Name="FirstNameInput">
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Column="0" Grid.Row="1" >
+                    <Label
+						Width="auto"
+						Content="Last Name"
+						HorizontalAlignment="Center"
+						Margin="10,10,10,10"
+						VerticalAlignment="Center"
+						Background="Lavender"
+						Padding="5"
+						FontSize="10">
+                    </Label>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <TextBox Height="Auto"
+							  HorizontalAlignment="Left"
+							  Margin="10,10,0,0"
+							  Text=""
+							  VerticalAlignment="Top"
+							  Width="120"
+							  Name="LastNameInput">
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Column="0" Grid.Row="2" >
+                    <Label
+		                Width="auto"
+		                Content="Date of birth"
+		                HorizontalAlignment="Center"
+		                Margin="10,10,10,9.5"
+		                VerticalAlignment="Center"
+		                Background="Lavender"
+		                Padding="5"
+		                FontSize="10">
+                    </Label>
+                </Grid>
+                <Grid Grid.Column="1" Grid.Row="2">
+                    <TextBox Height="Auto"
+			              HorizontalAlignment="Left"
+			              Margin="10,10,0,0"
+			              Text=""
+			              VerticalAlignment="Top"
+			              Width="120"
+			              Name="DOBInput">
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Column ="0" Grid.Row="3">
+                    <Button
+						Height="30"
+						Width="70"
+						  Margin="10,10,0,0"
+						Name="SubmitButton"
+						Content="Submit"/>
+                </Grid>
+
+            </Grid>
+        </Grid>
+        <!--ListBox-->
+
+
+
+
+    </Grid>
+</Window>
