@@ -95,7 +95,8 @@
 						Width="70"
 						  Margin="10,10,0,0"
 						Name="SubmitButton"
-						Content="Submit"/>
+						Content="Submit"
+						Click="SubmitButton_OnClick"/>
 				</Grid>
 				<Grid Grid.Column ="0" Grid.Row="3">
 					<Button
@@ -103,7 +104,8 @@
 						Width="70"
 						Margin="10,10,0,0"
 						Name="BookButton"
-						Content="Book Trip"/>
+						Content="Book Trip"
+						Click="BookButton_OnClick"/>
 				</Grid>
 			</Grid>
 		</Grid>

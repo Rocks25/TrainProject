@@ -46,7 +46,7 @@ namespace TrainProject.Views
 					db.Customers.Add(customer);
 					db.SaveChanges();
 				}
-
+				db.Dispose();
 				Window win2 = new MainWindowView();
 				win2.Show();
 				this.Close();
