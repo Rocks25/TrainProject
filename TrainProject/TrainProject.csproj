@@ -68,6 +68,7 @@
     <Compile Include="Customer.cs">
       <DependentUpon>TrainDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\CustomerInfoModel.cs" />
     <Compile Include="Model\SeatOptionModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ReservableSpace.cs">
@@ -115,6 +116,9 @@
     </Compile>
     <Compile Include="Model\MainWindowModel.cs" />
     <Compile Include="TrainUtils.cs" />
+    <Compile Include="Views\CustomerInfoView.xaml.cs">
+      <DependentUpon>CustomerInfoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
@@ -174,6 +178,10 @@
     <Content Include="TrainDataModel.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\CustomerInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
