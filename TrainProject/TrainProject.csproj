@@ -68,6 +68,7 @@
     <Compile Include="Customer.cs">
       <DependentUpon>TrainDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\SeatOptionModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ReservableSpace.cs">
       <DependentUpon>TrainDataModel.tt</DependentUpon>
