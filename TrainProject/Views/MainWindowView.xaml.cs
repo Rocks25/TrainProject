@@ -26,5 +26,10 @@ namespace TrainProject.Views
 			DataContext = new MainWindowModel();
 			InitializeComponent();
 		}
+
+		private void OriginInput_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			
+		}
 	}
 }

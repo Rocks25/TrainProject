@@ -21,6 +21,7 @@ namespace TrainProject
     
         public int TicketNumber { get; set; }
         public string Type { get; set; }
+        public string Date { get; set; }
     
         public virtual Station StartStationID { get; set; }
         public virtual Station EndStationID { get; set; }

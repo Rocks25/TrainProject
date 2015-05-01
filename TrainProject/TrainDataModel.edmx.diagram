@@ -11,16 +11,14 @@
         <EntityTypeShape EntityType="TrainDataModel.StopsAsc" Width="1.5" PointX="3.5" PointY="4.375" />
         <AssociationConnector Association="TrainDataModel.ScheduleStopsAsc" />
         <EntityTypeShape EntityType="TrainDataModel.BookingType" Width="1.5" PointX="13" PointY="2" />
-        <EntityTypeShape EntityType="TrainDataModel.ReservableSpace" Width="1.5" PointX="10.875" PointY="4.75" />
+        <EntityTypeShape EntityType="TrainDataModel.ReservableSpace" Width="1.5" PointX="10.875" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="TrainDataModel.BookingTypeReservableSpace" />
         <AssociationConnector Association="TrainDataModel.TrainReservableSpace"></AssociationConnector>
         <EntityTypeShape EntityType="TrainDataModel.Station" Width="1.5" PointX="3.5" PointY="7.125" />
         <AssociationConnector Association="TrainDataModel.StationStopsAsc" />
-        <EntityTypeShape EntityType="TrainDataModel.Segment" Width="1.5" PointX="0.875" PointY="7.625" />
+        <EntityTypeShape EntityType="TrainDataModel.Segment" Width="1.5" PointX="0.625" PointY="7.625" />
         <AssociationConnector Association="TrainDataModel.SegmentStationA" />
-        <AssociationConnector Association="TrainDataModel.SegmentStationB" ManuallyRouted="true" >
-          <ConnectorPoint PointX="2.375" PointY="8.1056149291992181" />
-          <ConnectorPoint PointX="3.5" PointY="8.1056149291992181" />
+        <AssociationConnector Association="TrainDataModel.SegmentStationB" ManuallyRouted="false" >
         </AssociationConnector>
         <EntityTypeShape EntityType="TrainDataModel.Ticket" Width="1.5" PointX="6.5" PointY="10.375" />
         <EntityTypeShape EntityType="TrainDataModel.Customer" Width="1.5" PointX="3.625" PointY="10.25" />
