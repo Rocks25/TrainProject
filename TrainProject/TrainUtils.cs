@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
@@ -13,7 +14,7 @@ namespace TrainProject
 {
 	abstract class TrainUtils
 	{
-		static private TrainDataModelContainer db = new TrainDataModelContainer();
+		static public TrainDataModelContainer db = new TrainDataModelContainer();
 
 		public static IEnumerable<Station> ShortestRoute(Station originStation, Station destinationStation, Train t)
 		{
@@ -66,10 +67,61 @@ namespace TrainProject
 			return null;
 		}
 
+		public static List<String> GetSchedules(Station originStation, Station destinationStation)
+		{
+			var stopGroups = from stop in db.StopsAscs
+							 group stop by stop.Schedule.TrainRouteID into schedules
+							 orderby schedules.Key
+							 select schedules;
+
+			stopGroups.AsNoTracking();
+
+			var filteredStops = stopGroups.Where(sg => sg.Any(g => g.Station.StationID == originStation.StationID)).Where(sg => sg.Any(g => g.Station.StationID == destinationStation.StationID));
+
+			filteredStops.AsNoTracking();
+
+			List<String> test = new List<string>();
+
+			foreach (var schedules in filteredStops)
+			{
+				bool foundOrigin = false;
+				string stopsString = "";
+
+				foreach (var stop in schedules)
+				{
+					if (!foundOrigin)
+					{
+						if (stop.Station.StationID.Equals(originStation.StationID))
+						{
+							foundOrigin = true;
+							stopsString += "Departure: " + stop.Station.StationName + " (" + stop.DepartureTime + ")" + "\r\n" + "Via: ";
+						}
+					}
+					else if (stop.Station.StationID != destinationStation.StationID)
+					{
+						stopsString += stop.Station.StationName + " -> ";
+					}
+					else
+					{
+						stopsString += stop.Station.StationName + "" + "Arrival: " + stop.Station.StationName + " (" +
+						               stop.ArrivalTime + ")";
+						break;
+					}
+				}
+
+				test.Add(stopsString);
+			}
+
+			return test;
+		}
+
 		public static IEnumerable<Station> GetOrigins()
 		{
 			IEnumerable<Station> originsStations = from station in db.Stations
 												   select station;
+
+			((DbQuery<Station>) originsStations).AsNoTracking();
+
 			return originsStations;
 		}
 
@@ -78,6 +130,7 @@ namespace TrainProject
 			IEnumerable<Station> destinationStations = from destination in db.Stations
 													   where destination.StationID != originId
 													   select destination;
+			((DbQuery<Station>) destinationStations).AsNoTracking();
 			return destinationStations;
 		}
 

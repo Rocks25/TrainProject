@@ -36,6 +36,8 @@ namespace TrainProject.Model
 			}
 		}
 
+
+
 		public event PropertyChangedEventHandler PropertyChanged;
 	}
 }
